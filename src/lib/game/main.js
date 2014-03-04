@@ -2,9 +2,15 @@ ig.module(
 	'game.main'
 )
 .requires(
-	'plusplus.core.plusplus'
+	'plusplus.core.plusplus',
+	'game.levels.level1'
 )
-.defines(function(){
-	var myGameClass = ig.GameExtended.extend({ /* game settings go here */ });
-	ig.main( '#canvas', myGameClass, 60, 320, 240, 1, ig.LoaderExtended );
+.defines(function() {
+	var myGameClass = ig.GameExtended.extend({
+		init: function () {
+			this.parent();
+			this.loadLevel(ig.global.LevelLevel1);
+		}
+	});
+	ig.main( '#canvas', myGameClass, 60, 960, 640, 1, ig.LoaderExtended );
 });

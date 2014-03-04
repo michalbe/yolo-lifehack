@@ -29,7 +29,7 @@ module.exports = function (grunt) {
     shell: {
       // bake impact game
       bake: {
-        command: 'cd src/tools/ && ./bake.sh && cd .. && mv game.min.js ../deploy/js/<%= pkg.name %>.min.js'
+        command: 'cd src/tools/ && ./bake.sh && cd .. && mv game.min.js ../deploy/js/<%= pkg.name %>.min.js && cp -r media/sprites/ ../deploy/media/sprites && cp -r media/tiles/ ../deploy/media/tiles'
       }
     },
     watch: {
