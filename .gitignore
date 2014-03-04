@@ -7,3 +7,10 @@ obj/*
 *.sln
 *.suo
 .idea/*
+
+src/lib/impact/*
+src/lib/weltmeister/*
+src/lib/weltmeister.html
+src/lib/tools/*
+
+deploy/js/*
