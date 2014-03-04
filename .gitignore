@@ -8,9 +8,10 @@ obj/*
 *.suo
 .idea/*
 
-src/lib/impact/*
-src/lib/weltmeister/*
+src/lib/impact
+src/lib/weltmeister
 src/lib/weltmeister.html
-src/lib/tools/*
+src/lib/tools
+src/lib/plusplus
 
 deploy/js/*
