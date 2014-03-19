@@ -31,18 +31,17 @@ var j=e.radius,r=e.pos.x-f.pos.x;if(0>r*g)return e.reportCollisionVsWorld(0,b*d,
 var state = {
     init: function() {
         // Delete this init block or replace with your own logic.
-
-        // Create simple text display for current Phaser version
-        var text = "Phaser Version "+ Phaser.DEV_VERSION + " works!";
-        var style = { font: "24px Arial", fill: "#fff", align: "center" };
-        var t = game.add.text(this.world.centerX, this.world.centerY, text, style);
-        t.anchor.setTo(0.5, 0.5);
     },
     preload: function() {
         // STate preload logic goes here
+        game.load.spritesheet('character', 'assets/sprites/char.jpg', 180, 180);
+
     },
     create: function(){
       // State create logic goes here
+      var character = game.add.sprite(300, 200, 'character');
+      character.animations.add('walk');
+      character.animations.play('walk', 5, true);
     },
     update: function() {
         // State Update Logic goes here.
@@ -50,8 +49,8 @@ var state = {
 };
 
 var game = new Phaser.Game(
-    800,
-    480,
+    window.innerWidth,
+    window.innerHeight,
     Phaser.AUTO,
     'game',
     state
