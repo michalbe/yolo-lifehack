@@ -41,7 +41,7 @@ var state = {
       // State create logic goes here
       var character = game.add.sprite(300, 200, 'character');
       character.animations.add('walk');
-      character.animations.play('walk', 5, true);
+      character.animations.play('walk', 6, true);
     },
     update: function() {
         // State Update Logic goes here.
