@@ -1,38 +1,48 @@
 module.exports = function (grunt) {
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-open');
-    grunt.loadNpmTasks('grunt-contrib-concat');
 
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        connect: {
-            server: {
-                options: {
-                    port: 8080,
-                    base: './deploy'
-                }
-            }
-        },
-        concat: {
-            dist: {
-                src: [  "src/lib/**/*.js",
-                    "src/game/**/*.js"
-                     ],
-                dest: 'deploy/js/<%= pkg.name %>.js'
-            }
-        },
-        watch: {
-            files: 'src/**/*.js',
-            tasks: ['concat']
-        },
-        open: {
-            dev: {
-                path: 'http://localhost:8080/index.html'
-            }
+  var shell = require('shelljs');
+
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-open');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-shell');
+
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    connect: {
+      server: {
+        options: {
+          port: 8080,
+          base: './deploy'
         }
-    });
+      }
+    },
+    // concat: {
+    //   dist: {
+    //     src: [ "src/lib/**/*.js",
+    //         "src/game/**/*.js"
+    //        ],
+    //     dest: 'deploy/js/<%= pkg.name %>.js'
+    //   }
+    // },
+    shell: {
+      // bake impact game
+      bake: {
+        command: 'cd src/tools/ && ./bake.sh && cd .. && mv game.min.js ../deploy/js/<%= pkg.name %>.min.js && cp -r media/sprites/ ../deploy/media/sprites && cp -r media/tiles/ ../deploy/media/tiles'
+      }
+    },
+    watch: {
+      files: 'src/**/*.js',
+      tasks: ['shell:bake']
+    },
+    open: {
+      dev: {
+        path: 'http://localhost:8080/index.html'
+      }
+    }
+  });
 
-    grunt.registerTask('default', ['concat', 'connect', 'open', 'watch']);
+  grunt.registerTask('default', ['shell:bake', 'connect', 'open', 'watch']);
 
 }
