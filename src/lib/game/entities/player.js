@@ -6,8 +6,8 @@ ig.module(
   ig.EntityPlayer = ig.global.EntityPlayer = ig.Player.extend({
     canFlipY: false,
     canFlipX: false,
-    size: {x: 8, y: 14},
-    offset: {x: 4, y: 2},
+    size: {x: 125, y: 50},
+    offset: {x: 25, y: 130},
     animSheet: new ig.AnimationSheet( "media/sprites/char.png", 180, 180),
     animInit: "idleX",
     speed: {
@@ -24,8 +24,7 @@ ig.module(
       moveUp: { sequence: [12, 13, 14, 15], frameTime: 0.09 },
       moveRight: { sequence: [0, 1, 2, 3], frameTime: 0.09 },
       moveLeft: { sequence: [8, 9, 10, 11], frameTime: 0.09 }
-    },
-    collides: ig.EntityExtended.COLLIDES.FIXED
+    }
   });
 
 });
