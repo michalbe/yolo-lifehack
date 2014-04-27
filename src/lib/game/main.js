@@ -12,5 +12,5 @@ ig.module(
 			this.loadLevel(ig.global.LevelLevel1);
 		}
 	});
-	ig.main( '#canvas', myGameClass, 60, 960, 640, 1, ig.LoaderExtended );
+	ig.main( '#canvas', myGameClass, 60, 800, 600, 1, ig.LoaderExtended );
 });
