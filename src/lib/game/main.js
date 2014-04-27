@@ -12,7 +12,8 @@ ig.module(
       //if (this.pos.y < this.tileSize.y*4 && !this.isUiScreen) {
       //    this.zIndex = 10100;
       //} else {
-      this.zIndex = this.pos.y + this.size.y;
+
+      this.zIndex = this.pos.y + this.size.y - this.offset.y;
       //}
       this.parent();
     }
@@ -20,6 +21,7 @@ ig.module(
 
 	var myGameClass = ig.GameExtended.extend({
 		init: function () {
+			this.autoSort = true;
 			this.parent();
 			this.loadLevel(ig.global.LevelLevel1);
 		}
