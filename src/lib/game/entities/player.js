@@ -10,6 +10,14 @@ ig.module(
     offset: {x: 4, y: 2},
     animSheet: new ig.AnimationSheet( "media/sprites/char.png", 180, 180),
     animInit: "idleX",
+    speed: {
+      x: 500,
+      y: 500
+    },
+    maxVelGrounded: {
+        x: 500,
+        y: 500
+    },
     animSettings: {
       idleX: { sequence: [4], frameTime: 0.1 },
       moveDown: { sequence: [4, 5, 6, 7], frameTime: 0.07 },
