@@ -20,11 +20,12 @@ ig.module(
     },
     animSettings: {
       idleX: { sequence: [4], frameTime: 0.1 },
-      moveDown: { sequence: [4, 5, 6, 7], frameTime: 0.07 },
-      moveUp: { sequence: [12, 13, 14, 15], frameTime: 0.07 },
-      moveRight: { sequence: [0, 1, 2, 3], frameTime: 0.07 },
-      moveLeft: { sequence: [8, 9, 10, 11], frameTime: 0.07 }
-    }
+      moveDown: { sequence: [4, 5, 6, 7], frameTime: 0.09 },
+      moveUp: { sequence: [12, 13, 14, 15], frameTime: 0.09 },
+      moveRight: { sequence: [0, 1, 2, 3], frameTime: 0.09 },
+      moveLeft: { sequence: [8, 9, 10, 11], frameTime: 0.09 }
+    },
+    collides: ig.EntityExtended.COLLIDES.FIXED
   });
 
 });
