@@ -8,7 +8,7 @@ ig.module(
     canFlipX: false,
     size: {x: 125, y: 50},
     offset: {x: 25, y: 130},
-    animSheet: new ig.AnimationSheet( "media/sprites/char.png", 180, 180),
+    animSheet: new ig.AnimationSheet( "media/sprites/char-big.png", 180, 180),
     animInit: "idleX",
     speed: {
       x: 500,
