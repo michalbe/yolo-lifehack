@@ -468,19 +468,15 @@ ig.module(
                 // horizontal movement
 
                 if (ig.input.state('right')) {
-
-                    this.entity.moveToRight();
+                  this.entity.vel.y = 0;
+                  this.entity.moveToRight();
 
                 } else if (ig.input.state('left')) {
-
+                  this.entity.vel.y = 0;
                     this.entity.moveToLeft();
 
-                }
-
-                // vertical movement
-
-                if (ig.input.state('up')) {
-
+                } else if (ig.input.state('up')) {
+                  this.entity.vel.x = 0;
                     if (!this.entity.hasGravity) {
 
                         this.entity.moveToUp();
@@ -492,7 +488,7 @@ ig.module(
                     }
 
                 } else if (ig.input.state('down')) {
-
+                  this.entity.vel.x = 0;
                     if (!this.entity.hasGravity) {
 
                         this.entity.moveToDown();
