@@ -19,6 +19,7 @@ fs.readFile('./' + mapSchema, function read(err, data) {
 
 var createMapFromScheme = function(scheme) {
   scheme.forEach(resolveRow);
+  console.log(output + footer);
 }
 
 var resolveRow = function(row) {
@@ -27,7 +28,7 @@ var resolveRow = function(row) {
   row.forEach(function(element) {
     currentX += tileSize;
     if (element !== emptyTile) {
-      console.log('{"type":"EntityWall","x":' + currentX + ',"y":' + currentY + ',"settings":{"wallType":' + element + '}},');
+      output += '{"type":"EntityWall","x":' + currentX + ',"y":' + currentY + ',"settings":{"wallType":' + element + '}},';
     }
-  })
+  });
 }
