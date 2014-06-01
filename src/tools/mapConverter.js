@@ -5,6 +5,7 @@ var tileSize = 180;
 var currentX = 0;
 var currentY = 0;
 var output = '';
+var emptyTile = 9;
 
 fs.readFile('./' + mapSchema, function read(err, data) {
   if (err) {
@@ -24,6 +25,8 @@ var resolveRow = function(row) {
   currentY += tileSize;
   row.forEach(function(element) {
     currentX += tileSize;
-    console.log("X:", currentX, "Y:", currentY, "TYPE:", element);
+    if (element !== emptyTile) {
+      console.log("X:", currentX, "Y:", currentY, "TYPE:", element);
+    }
   })
 }
