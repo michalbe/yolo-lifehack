@@ -1,9 +1,9 @@
 ig.module(
   'game.entities.building'
 ).requires(
-  'plusplus.core.entity'
+  'impact.entity'
 ).defines( function() {
-  ig.global.EntityBuilding = ig.EntityExtended.extend({
+  ig.global.EntityBuilding = ig.Entity.extend({
     size: {x: 360, y: 180},
     offset: {x: 0, y: 144},
     animSheet: new ig.AnimationSheet( "media/tiles/building1.png", 360, 324),
