@@ -10,7 +10,8 @@ fs.readFile('./' + mapSchema, function read(err, data) {
   if (err) {
       throw err;
   }
-  console.log("MAP:", JSON.parse(data));
+  //console.log("MAP:", JSON.parse(data));
+  createMapFromScheme(JSON.parse(data));
 });
 
 
@@ -19,7 +20,10 @@ var createMapFromScheme = function(scheme) {
 }
 
 var resolveRow = function(row) {
-  row.forEach(function(element){
-
+  currentX = 0;
+  currentY += tileSize;
+  row.forEach(function(element) {
+    currentX += tileSize;
+    console.log("X:", currentX, "Y:", currentY, "TYPE:", element);
   })
 }
