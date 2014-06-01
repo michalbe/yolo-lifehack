@@ -51,5 +51,5 @@ ig.module(
 			// this.screen.y = this.player.pos.y - ig.system.height/2;
 		}
 	});
-	ig.main('#canvas', myGameClass, 60, 800, 600, 1);
+	ig.main('#canvas', myGameClass, 60, window.innerWidth, window.innerHeight, 1);
 });
