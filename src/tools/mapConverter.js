@@ -4,7 +4,8 @@ var mapSchema = process.argv[2];
 var tileSize = 180;
 var currentX = 0;
 var currentY = 0;
-var output = '';
+var output = "ig.module('game.levels.level1').requires('impact.image','game.entities.wall','game.entities.player').defines(function(){LevelLevel1={'entities':[";
+var footer = "]};LevelLevel1Resources=[new ig.Image('media/tiles/floors.jpg')];});";
 var emptyTile = 9;
 
 fs.readFile('./' + mapSchema, function read(err, data) {
