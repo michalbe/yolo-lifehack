@@ -27,7 +27,7 @@ var resolveRow = function(row) {
   row.forEach(function(element) {
     currentX += tileSize;
     if (element !== emptyTile) {
-      console.log('{"type":"EntityWall","x":' + currentX + ',"y":' + currentY + ',"settings":{"wallType":' + element + '}}');
+      console.log('{"type":"EntityWall","x":' + currentX + ',"y":' + currentY + ',"settings":{"wallType":' + element + '}},');
     }
   })
 }
