@@ -19,7 +19,13 @@ fs.readFile('./' + mapSchema, function read(err, data) {
 
 var createMapFromScheme = function(scheme) {
   scheme.forEach(resolveRow);
-  console.log(output + footer);
+  fs.writeFile('level.js', output + footer, function(err){
+    if (err) {
+      console.log('Could not update level.js file');
+    } else {
+      console.log('Level saved in level.js');
+    }
+  });
 }
 
 var resolveRow = function(row) {
