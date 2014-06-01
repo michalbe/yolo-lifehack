@@ -33,7 +33,7 @@ var createMapFromScheme = function(scheme) {
 }
 
 var resolveRow = function(row, rowIndex) {
-  currentX = 0;
+  currentX = -tileSize;
   currentY += tileSize;
   row.forEach(function(element, index) {
     currentX += tileSize;
