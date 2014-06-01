@@ -4,6 +4,7 @@ var mapSchema = process.argv[2];
 var tileSize = 180;
 var currentX = 0;
 var currentY = 0;
+var output = '';
 
 fs.readFile('./' + mapSchema, function read(err, data) {
   if (err) {
@@ -14,5 +15,11 @@ fs.readFile('./' + mapSchema, function read(err, data) {
 
 
 var createMapFromScheme = function(scheme) {
+  scheme.forEach(resolveRow);
+}
 
+var resolveRow = function(row) {
+  row.forEach(function(element){
+
+  })
 }
