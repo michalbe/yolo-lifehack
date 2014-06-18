@@ -14,13 +14,8 @@ ig.module(
 
 	ig.Entity.inject({
     update: function() {
-      //if (this.pos.y < this.tileSize.y*4 && !this.isUiScreen) {
-      //    this.zIndex = 10100;
-      //} else {
-
 			this.parent();
-      this.zIndex = this.pos.y + this.size.y;// - this.offset.y;
-      //}
+      this.zIndex = this.pos.y + this.size.y;
     }
 	});
 
